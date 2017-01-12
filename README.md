@@ -101,8 +101,6 @@ CSS {LESS} Framework simple atomic level (Atomic Design). YepCss uses Sass.
   >  hover-bg-red .bg-red:hover { .bg-red; }
   
 
-See all classes. Оther samples.
-
 **Class Naming Rules**
 
 In use as a separator - (minus). If the «-» is a number, the less falls: wrong **> - .w-10; > right - .w10**.
