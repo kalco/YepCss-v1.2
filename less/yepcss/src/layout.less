@@ -1,0 +1,31 @@
+// .!YepCSS -> CSS Framework By Kalco
+
+// Layouts
+
+.layout-center {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: @layout_max_width;
+}
+
+// If There Is An Inner Wrap Predetermined Width
+.layout-center-wrap {
+	width: 100%;
+	
+	// Will Be Removed
+	> .wrap {
+		width: 100%;
+		margin-right: auto;
+		margin-left: auto;
+		max-width: @layout_max_width;
+	}
+	
+	> .layout-wrap {
+		width: 100%;
+		margin-right: auto;
+		margin-left: auto;
+		max-width: @layout_max_width;
+	}
+	
+}

@@ -1,0 +1,47 @@
+// .!YepCSS -> CSS Framework By Kalco
+
+// Links
+
+a {
+	// Reset Color :hover
+	&.hover-no-color {
+		&:hover {
+			color: inherit;
+		}
+	}
+	
+	// Reset Underline :hover
+	&.hover-no-underline {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+// For Child Tags
+.hover-no-color {
+	a:hover {
+		color: inherit;
+	}
+}
+
+.hover-no-underline {
+	a:hover {
+		text-decoration: none;
+	}
+}
+
+.links-no-color {
+	
+	a:not([class^="t-"]):not([class*=" t-"])
+	{
+		color: inherit;
+	}
+}
+
+// !important — Pilot Version!
+.links-no-color-imp {
+	a {
+		color: inherit !important;
+	}
+}

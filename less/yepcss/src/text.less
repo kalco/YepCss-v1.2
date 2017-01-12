@@ -1,0 +1,106 @@
+// .!YepCSS -> CSS Framework By Kalco
+
+// Text
+
+// Normal Text
+.normal
+{
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	line-height: 1em;
+}
+
+// Text Formating
+.bold       { font-weight: bold; }
+.italic     { font-style: italic; }
+.underline  { text-decoration: underline; }
+.strike     { text-decoration: line-through; }
+.small-caps { font-variant: small-caps; }
+.capitalize { text-transform: capitalize; }
+.upper      { text-transform: uppercase; }
+.lower      { text-transform: lowercase; }
+
+// Text Alignment
+.t-right   { text-align: right; }
+.t-left    { text-align: left; }
+.t-center  { text-align: center; }
+.t-justify { text-align: justify; }
+
+// Mix From @media
+.text_media(@m; @postfix)
+{
+	@media @m {
+		.t-right-@{postfix}   { text-align: right; }
+		.t-left-@{postfix}    { text-align: left; }
+		.t-center-@{postfix}  { text-align: center; }
+		.t-justify-@{postfix} { text-align: justify; }	
+	}
+}
+
+.text_media(@SCREEN_TABLET, tablet);
+.text_media(@SCREEN_PHONE, phone);
+.text_media(@SCREEN_SMALL, small);
+.text_media(@SCREEN_MEDIUM, medium);
+.text_media(@SCREEN_LARGE, large);
+
+// Prohibition Of Transfer
+.t-nowrap { white-space: nowrap; }
+.t-wrap   { white-space: normal; }
+.t-pre-wrap  { white-space: pre-wrap; }
+.t-break-word  { word-wrap: break-word; }
+
+
+// Headset
+.t-georgia { font-family: Georgia, Times New Roman, serif; }
+.t-times   { font-family: Times New Roman, serif; }
+.t-arial   { font-family: Arial, Helvetica, Verdana, sans-serif; }
+.t-verdana { font-family: Verdana, Arial, Helvetica, sans-serif; }
+.t-mono    { font-family: PT Mono, Monaco, Menlo, Consolas, Courier New, monospace; }
+
+// Size REM
+// Cycle font-size REM On Base @text_rem From variables.less
+.text_rem_loop(@counter) when (@counter > 0) {
+	.text_rem_loop((@counter - 1));
+	
+	@val: extract(@text_rem, @counter);
+	@val1: @val * 100;
+	
+	.t@{val1} {
+		font-size: ~"@{val}rem";
+	}
+}
+
+.text_rem_loop(length(@text_rem));
+
+
+// Size EM
+// Cycle font-size EM On Base @text_em From variables.less
+.text_em_loop(@counter) when (@counter > 0) {
+	.text_em_loop((@counter - 1));
+	
+	@val: extract(@text_em, @counter);
+	@val1: @val * 100;
+	
+	.t@{val1}em {
+		font-size: ~"@{val}em";
+	}
+}
+
+.text_em_loop(length(@text_em));
+
+// Size PX
+// Cycle font-size PX On Base @text_px From variables.less
+.text_px_loop(@counter) when (@counter > 0) {
+	.text_px_loop((@counter - 1));
+	
+	@val: extract(@text_px, @counter);
+	
+	.t@{val}px {
+		font-size: ~"@{val}px";
+	}
+}
+
+.text_px_loop(length(@text_px));

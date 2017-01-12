@@ -1,0 +1,115 @@
+// .!YepCSS -> CSS Framework By Kalco
+
+
+// http://the-echoplex.net/flexyboxes/ — построитель
+// http://html5.by/blog/flexbox/
+// http://frontender.info/a-guide-to-flexbox/
+// http://www.w3.org/TR/css3-flexbox/
+
+.flex {
+	.grid_flex > .container(space-between, stretch);
+	
+	&.flex-vcenter {
+		.grid_flex > .align_items(center);
+	}
+	
+	&.flex-hcenter {
+		.grid_flex > .justify_content(center);
+	}
+}
+
+.flex-grow0 { .grid_flex > .grow(0); }
+.flex-grow1 { .grid_flex > .grow(1); }
+.flex-grow2 { .grid_flex > .grow(2); }
+.flex-grow3 { .grid_flex > .grow(3); }
+
+.flex-order0 { .grid_flex > .order(0); }
+.flex-order1 { .grid_flex > .order(1); }
+.flex-order2 { .grid_flex > .order(2); }
+.flex-order3 { .grid_flex > .order(3); }
+.flex-order4 { .grid_flex > .order(4); }
+.flex-order5 { .grid_flex > .order(5); }
+
+.flex-wrap {
+	.grid_flex > .wrap(wrap);
+}
+
+// @media
+.flex_media(@m; @postfix; @a_postfix)
+{
+	@media @m {
+		.flex-wrap-@{postfix},
+		.flex-wrap-@{a_postfix}
+		{
+			.grid_flex > .wrap(wrap);
+		}
+		
+		.flex-@{postfix},
+		.flex-@{a_postfix}
+		{
+			.flex;
+		}
+		
+		.flex-reverse-@{postfix} {
+			.grid_flex > .direction(row-reverse);
+		}
+		
+		.flex-order0-@{postfix} { .grid_flex > .order(0); }
+		.flex-order1-@{postfix} { .grid_flex > .order(1); }
+		.flex-order2-@{postfix} { .grid_flex > .order(2); }
+		.flex-order3-@{postfix} { .grid_flex > .order(3); }
+		.flex-order4-@{postfix} { .grid_flex > .order(4); }
+		.flex-order5-@{postfix} { .grid_flex > .order(5); }
+		
+		&.flex-vcenter-@{postfix} {
+			.grid_flex > .align_items(center);
+		}
+		
+		&.flex-hcenter-@{postfix} {
+			.grid_flex > .justify_content(center);
+		}
+	}
+	
+}
+
+// The Same Mix, With Only Two Parameters
+.flex_media(@m; @postfix)
+{
+	@media @m {
+		.flex-wrap-@{postfix}
+		{
+			.grid_flex > .wrap(wrap);
+		}
+		
+		.flex-@{postfix}
+		{
+			.flex;
+		}
+		
+		.flex-reverse-@{postfix} {
+			.grid_flex > .direction(row-reverse);
+		}
+		
+		.flex-order0-@{postfix} { .grid_flex > .order(0); }
+		.flex-order1-@{postfix} { .grid_flex > .order(1); }
+		.flex-order2-@{postfix} { .grid_flex > .order(2); }
+		.flex-order3-@{postfix} { .grid_flex > .order(3); }
+		.flex-order4-@{postfix} { .grid_flex > .order(4); }
+		.flex-order5-@{postfix} { .grid_flex > .order(5); }
+		
+		&.flex-vcenter-@{postfix} {
+			.grid_flex > .align_items(center);
+		}
+		
+		&.flex-hcenter-@{postfix} {
+			.grid_flex > .justify_content(center);
+		}
+	}
+}
+
+// Perform
+.flex_media(@SCREEN_TABLET, tablet, tablet-phone);
+.flex_media(@SCREEN_PHONE, phone, tablet-phone);
+.flex_media(@SCREEN_SMALL, small);
+.flex_media(@SCREEN_MEDIUM, medium);
+.flex_media(@SCREEN_LARGE, large);

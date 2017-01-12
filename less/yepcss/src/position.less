@@ -1,0 +1,36 @@
+// .!YepCSS -> CSS Framework By Kalco
+
+// Position
+
+.pos-fixed    { position: fixed; }
+.pos-absolute { position: absolute; }
+.pos-relative { position: relative; }
+
+// Cycle top right bottom left On Base @position_list From variables.less
+.position_loop(@counter) when (@counter > 0) {
+	.position_loop((@counter - 1));
+	
+	@val: extract(@position_list, @counter);
+
+	.pos@{val}-t 	{ top: ~"@{val}px"; }
+	.pos@{val}-r 	{ right: ~"@{val}px"; }
+	.pos@{val}-b	{ bottom: ~"@{val}px"; }
+	.pos@{val}-l	{ left: ~"@{val}px"; }
+}
+
+.position_loop(length(@position_list));
+
+// z-index
+
+// Cycle z-index On Base @zindex_list From variables.less
+.zindex_loop(@counter) when (@counter > 0) {
+	.zindex_loop((@counter - 1));
+	
+	@val: extract(@zindex_list, @counter);
+	
+	.z-index@{val} {
+		z-index: @val;
+	}
+ }
+
+.zindex_loop(length(@zindex_list));

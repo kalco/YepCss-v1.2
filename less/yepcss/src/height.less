@@ -1,0 +1,24 @@
+// .!YepCSS -> CSS Framework By Kalco
+
+// Height
+
+// Cycle height And min-height On Base @height_list From variables.less
+.height_loop(@counter) when (@counter > 0) {
+	.height_loop((@counter - 1));
+	
+	@val: extract(@height_list, @counter);
+	
+	.h@{val}px {
+		height: ~"@{val}px";
+	}
+	
+	.h@{val}px-min {
+		min-height: ~"@{val}px" !important;
+	}
+	
+	.h@{val}px-max {
+		max-height: ~"@{val}px" !important;
+	}
+ }
+
+.height_loop(length(@height_list));

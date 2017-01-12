@@ -1,0 +1,55 @@
+// .!YepCSS -> CSS Framework By Kalco
+
+// Indents
+
+.box > .set_padding(@padding, pad) !important;
+.box > .set_margin(@margin, mar) !important;
+
+
+// Cycle padding On Base @padding_list Fron variables.less
+.padding_loop(@counter) when (@counter > 0) {
+	.padding_loop((@counter - 1));
+	
+	@val: extract(@padding_list, @counter);
+	
+	.box > .set_padding(~"@{val}px", ~"pad@{val}") !important;
+}
+
+.padding_loop(length(@padding_list));
+
+// Cycle margin On Base @margin_list From variables.less
+.margin_loop(@counter) when (@counter > 0) {
+	.margin_loop((@counter - 1));
+	
+	@val: extract(@margin_list, @counter);
+	
+	.box > .set_margin(~"@{val}px", ~"mar@{val}") !important;
+}
+
+.margin_loop(length(@margin_list));
+
+// Responsive Design
+@media @SCREEN_TABLET {
+	.box > .set_padding(0, pad0, tablet) !important;
+	.box > .set_margin(0, mar0, tablet) !important;
+}
+
+@media @SCREEN_PHONE {
+	.box > .set_padding(0, pad0, phone) !important;
+	.box > .set_margin(0, mar0, phone) !important;
+}
+
+@media @SCREEN_SMALL {
+	.box > .set_padding(0, pad0, small) !important;
+	.box > .set_margin(0, mar0, small) !important;
+}
+
+@media @SCREEN_MEDIUM {
+	.box > .set_padding(0, pad0, medium) !important;
+	.box > .set_margin(0, mar0, medium) !important;
+}
+
+@media @SCREEN_LARGE {
+	.box > .set_padding(0, pad0, large) !important;
+	.box > .set_margin(0, mar0, large) !important;
+}

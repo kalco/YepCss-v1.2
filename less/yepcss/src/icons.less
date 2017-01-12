@@ -1,0 +1,96 @@
+// .!YepCSS -> CSS Framework By Kalco
+
+// Icons
+
+// Icon Size
+.t-icon        { font-size: @icon_size; }
+.t-icon-small  { font-size: @icon_size_small; }
+.t-icon-medium { font-size: @icon_size_medium; }
+.t-icon-large  { font-size: @icon_size_large; }
+
+// Class Which Removed The Right Indent Icons
+.icon0:before {
+	margin-right: 0 !important;
+}
+
+// Circle Icon
+// <a href="#" class="i-car icon-circle"></a>
+.icon-circle,
+.icon-circle-small,
+.icon-circle-medium,
+.icon-circle-large
+{ 
+	display: inline-block;
+	text-align: center;
+	
+	.border_radius(50%);
+	
+	// Reset Indent Icons
+	&:before {
+		margin: 0 !important;
+	}
+}
+
+.icon-circle
+{ 
+	width: @icon_circle_size; 
+	height: @icon_circle_size; 
+	line-height: @icon_circle_size; 
+}
+
+.icon-circle-small { 
+	width: @icon_size_small; 
+	height: @icon_size_small; 
+	line-height: @icon_size_small; 
+}
+
+.icon-circle-medium { 
+	width: @icon_size_medium; 
+	height: @icon_size_medium; 
+	line-height: @icon_size_medium; 
+}
+
+.icon-circle-large { 
+	width: @icon_size_large; 
+	height: @icon_size_large; 
+	line-height: @icon_size_large; 
+}
+
+// Square Icon
+.icon-square, 
+.icon-square-small, 
+.icon-square-medium, 
+.icon-square-large
+{ 
+	display: inline-block;
+	text-align: center;
+
+	// Reset Indent Icons
+	&:before {
+		margin: 0 !important;
+	}
+}
+
+.icon-square { 
+	width: @icon_square_size; 
+	height: @icon_square_size; 
+	line-height: @icon_square_size; 
+}
+
+.icon-square-small { 
+	width: @icon_size_small; 
+	height: @icon_size_small; 
+	line-height: @icon_size_small; 
+}
+
+.icon-square-medium { 
+	width: @icon_size_medium; 
+	height: @icon_size_medium; 
+	line-height: @icon_size_medium; 
+}
+
+.icon-square-large { 
+	width: @icon_size_large; 
+	height: @icon_size_large; 
+	line-height: @icon_size_large; 
+}

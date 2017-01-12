@@ -1,0 +1,26 @@
+// .!YepCSS -> CSS Framework By Kalco
+
+// Miscellaneous Without A Clear Theme
+
+// Rounding
+.rounded, .rounded10 { .border_radius(10px); }
+.rounded5 { .border_radius(5px); }
+
+// Circle
+
+.b-circle { .border_radius(50%); }
+
+// Cursor
+.cursor-pointer { cursor: pointer; }
+
+// Letter For A Paragraph
+.drop-cap { 
+	&:first-letter {
+		float: left;
+		font-size: 3em;
+		font-weight: bold;
+		margin-right: 0.75rem;
+		text-transform: uppercase;
+		line-height: 1;
+	}
+}
